@@ -11,7 +11,7 @@ ingredients = ["apples","bananas","tomatoes","grapes","pineapple","lemon","lemon
                 "bar-b-que sauce","tuna","tumeric","soy sauce","baking soda","pepper sauce","peppers","cream cheese","bread crumbs","bell pepper",
                 "cinnamon","cilantro","parsley","curry powder","black pepper","avocado","vanilla essence","nutmeg","salsa","chive","corn syrup",
                 "maple syrup","strawberries","cloves","thyme","pumpkin","peas","oats","macaroni","chocolate chips","chocolate milk","chocoloate",
-                "wine"]
+                "wine","ricotta","channa","ginger","fettucine","spaghetti","sausage","sardines","beer"]
 
 for ingredient in ingredients:
     ingredient=Ingredient(name=ingredient)

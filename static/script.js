@@ -1,5 +1,5 @@
-let url='https://quiet-shore-69498.herokuapp.com';
-let server='https://quiet-shore-69498.herokuapp.com';
+let url='http://127.0.0.1:8080';
+let server='http://127.0.0.1:8080';
 const appID = '09922bc4';
 const appKey = '7b4e785f51b5bdfb12595b7b385b35a6';
 let query = '';
@@ -182,14 +182,40 @@ function displayRecipes(records){
   }
 }
 
+async function getDB(){
+  let url=`${server}/ingredient`;
+  try{ 
+    let token=window.localStorage.getItem("access_token");
+    let response = await fetch(
+      url, 
+      {
+        method: 'GET',
+        headers: {'Content-Type':'application/json',
+                  'Authorization':`jwt ${token}`}// JSON data
+      },
+    );
+    let result=await response.json();
+    dbingredients=result;
+  }catch(e){
+    console.log(e);
+  }
+}
+
 function setSearch(e){
   search = e.target.value;
 }
 function getSearch(e){
   recipes=[];
   e.preventDefault();
-  query = search;
-  getRecipes();
+  for(let i=0;i<dbingredients.length;i++){
+    if(search==dbingredients[i].name){
+      query = search;
+      getRecipes();
+    }
+  }
+  if(query!=search){
+    alert("That recipe is not in our database at the moment please try another search.");
+  }
 }
 
 function recipeSubmit(recipe){
