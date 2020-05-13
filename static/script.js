@@ -1,5 +1,5 @@
-let url='http://127.0.0.1:8080';
-let server='http://127.0.0.1:8080';
+let url='https://quiet-shore-69498.herokuapp.com';
+let server='https://quiet-shore-69498.herokuapp.com';
 const appID = '09922bc4';
 const appKey = '7b4e785f51b5bdfb12595b7b385b35a6';
 let query = '';
