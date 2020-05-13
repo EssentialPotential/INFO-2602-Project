@@ -420,3 +420,8 @@ a{
 .listItem{
     display: inline;
 }
+
+#instructions{
+    margin-top: 10px;
+    font-size: 18px;
+}

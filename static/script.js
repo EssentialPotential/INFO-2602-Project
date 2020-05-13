@@ -99,7 +99,7 @@ function signUpSubmit(event){
     let myform = event.target.elements;
     let chkbx= document.getElementById("chkbx");
     let cpassword= myform['cpassword'].value;
-   
+
     let data = {
       name: myform['name'].value,
       email: myform['email'].value,
@@ -164,7 +164,6 @@ function displayRecipes(records){
   let res = document.querySelector('#recipes');
   res.innerHTML = ``;
   for (i=0;i<records.length;i++){
-    let ingredients=records[i].ingredients;
     res.innerHTML += `
       <div class="recipe" id="${records[i].id}">
       <h3>${records[i].id}</h3>
@@ -183,6 +182,10 @@ function displayRecipes(records){
 }
 
 async function getDB(){
+  let res = document.querySelector('#recipes');
+  res.innerHTML =`<div id="instructions">
+                    <p>Please enter an ingredient name into the search box to view recipes based on that ingredient.</p>
+                  </div>`;
   let url=`${server}/ingredient`;
   try{ 
     let token=window.localStorage.getItem("access_token");
