@@ -173,7 +173,7 @@ function displayRecipes(records){
       <p>Diet Labels: ${records[i].recipe.dietLabels}</p>
       <p>Health Labels: ${records[i].recipe.healthLabels}</p>
       <div class="btns">
-      <button onclick="recipeSubmit('${records[i].id}')">Save Dish</button>
+      <button onclick="recipeSubmit('${records[i].id}')">Save Recipe</button>
       <button onclick="goTo('${records[i].recipe.url}')">View Recipe</button>
       <button onclick="viewIngredients('${records[i].id}')">View Ingredients</button>
       </div>
@@ -334,7 +334,7 @@ function drawList(recipes){
   }else{
     res.innerHTML+=`<ul id=recipe>`;
     for(let i=0;i<recipes.length;i++){
-      res.innerHTML+=`<li class="listItem"><a onclick="getRecipe('${recipes[i].name}')">${recipes[i].name}</a></li><br>`;
+      res.innerHTML+=`<li class="rcp"><a onclick="getRecipe('${recipes[i].name}')">${recipes[i].name}</a></li><br>`;
     }
     res.innerHTML+=`</ul>`;
   }

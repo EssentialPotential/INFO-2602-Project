@@ -351,6 +351,7 @@ h3,h2{
 
 a{
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 #del{
