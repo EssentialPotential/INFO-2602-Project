@@ -111,11 +111,9 @@ def getIngredients():
         return 'There are currently no ingredients added to your list.', 200
     return json.dumps(ingredients), 200
 
-@app.route('/ingredients', methods=['GET'])
+@app.route('/ingredients/<name>', methods=['GET'])
 @jwt_required()
-def getIngredient():
-    userdata= request.get_json()
-    name = userdata['name']
+def getIngredient(name):
     ingredient = UserIngredient.query.filter_by(id=current_identity.id, name=name).first()
     if ingredient == None:
         return 'No ingredient found.'
